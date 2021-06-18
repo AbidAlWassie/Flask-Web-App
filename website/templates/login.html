@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %} Login or signup {% endblock %}
+{% block content %}
+<div class="navbar">
+    <div class="left">
+        <h3>Flask web app login</h3>
+    </div>
+    <div class="right">
+        <form action="/login" method="POST">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+<div class="discolor"></div><br>
+<div class="main">
+    <div class="logo"><p style="margin-left: 10%;">[!location for logo] <br> <small>[!Error 404: logo not found]</small></p>
+        <h3>Don't be afraid of the look. <br> <br> We didn't have enough money to spend a lot on the frontend.</h3>
+        <br>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'error' %}
+                        <span style="color:red; margin-left:20px">
+                            {{ message }}
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    </div>
+    <div class="signup">
+        <form action="/signup" method="POST">
+            <h3>Signup for a new account</h3><br>
+            <label for="first">Firstname</label>
+            <input type="text" name="firstname" id="first" placeholder="Firstname"><br>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Email"><br>
+            <label for="pass1">New Password</label>
+            <input type="password" name="password1" id="pass1" placeholder="New Password"><br>
+            <label for="pass2">Confirm Password</label>
+            <input type="password" name="password2" id="pass2" placeholder="Confirm Password"><br>
+            
+            <div class="txt">
+                <small>By clicking 'Signup' you agree to our <a href="">Terms & Conditions</a></small>
+            </div>
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+</div>
+{% endblock %}
