@@ -7,8 +7,8 @@
     </div>
     <div class="right">
         <form action="/login" method="POST">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
             <input type="submit" value="Login">
         </form>
     </div>
@@ -35,8 +35,8 @@
     <div class="signup">
         <form action="/signup" method="POST">
             <h3>Signup for a new account</h3><br>
-            <label for="first">Firstname</label>
-            <input type="text" name="firstname" id="first" placeholder="Firstname"><br>
+            <label for="full_name">Fullname</label>
+            <input type="text" name="full_name" id="full_name" placeholder="Fullname"><br>
             <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="Email"><br>
             <label for="pass1">New Password</label>
